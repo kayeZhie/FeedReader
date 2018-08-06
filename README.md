@@ -10,7 +10,7 @@ In this project we are given a web-based application that reads RSS feeds by Uda
 
 ## How to run the project locally
 
-* Click [here](https://kayezhie.github.io/FeedReader/) to Clone or Download Zip.
+* Click [here](https://github.com/kayeZhie/FeedReader) to Clone or Download Zip.
 * Locate and Open the Folder.
 * Open index.html
 * Review the functionality of the application within your browser
