@@ -32,27 +32,73 @@ $(function() {
          * and that the URL is not empty.
          */
 
+         /* Kaye: I used Expect() with a variable passed inside it's parenthesis for the nested item
+          * toBeDefine() to check it wether or not the variable is defined.
+          * there's code for checking the length as well.
+          */
+
+        it('URLs defined', function() {
+            for(i = 0; i < allFeeds.length; i++) {
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url.length).not.toBe(0);
+            }
+        });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+         /* Kaye: Same exact code as urls but this time with
+          * "name" property
+          */
+
+         it('names defined', function() {
+            for(i = 0; i < allFeeds.length; i++) {
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name.length).not.toBe(0);
+            }
+        });
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
 
+    describe('The menu', function() {
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
 
+         /* Kaye: querying the body element, 
+          * expecting it’s class list to contain “menu-hidden” to be true.
+          */
+
+        it('is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+        it('toggles on and off', function() {
+
+         /* Kaye: test wether or not the menu
+          * toggles on and off (click to show and click again to hide it)
+          */   
+
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).not.toBe(true);
+
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
